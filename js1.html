@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <style>
+      .light {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: gray;
+        margin: 10px auto;
+      }
+      #g { background-color: gray; }
+      #y { background-color: gray; }
+      #r { background-color: gray; }
+    </style>
+  </head>
+  <body>
+    <div id="r" class="light"></div>
+    <div id="y" class="light"></div>
+    <div id="g" class="light"></div>
+
+    <script>
+      let g = document.getElementById("g");
+      let y = document.getElementById("y");
+      let r = document.getElementById("r");
+
+      function trafficLight() {
+        // Red ON
+        r.style.backgroundColor = "red";
+        y.style.backgroundColor = "gray";
+        g.style.backgroundColor = "gray";
+
+        setTimeout(() => {
+          // Yellow ON
+          r.style.backgroundColor = "gray";
+          y.style.backgroundColor = "yellow";
+          g.style.backgroundColor = "gray";
+        }, 1000);
+
+        setTimeout(() => {
+          // Green ON
+          r.style.backgroundColor = "gray";
+          y.style.backgroundColor = "gray";
+          g.style.backgroundColor = "green";
+        }, 2000);
+      }
+
+      // Repeat the cycle every 3 seconds
+      setInterval(trafficLight, 3000);
+
+      // Start immediately
+      trafficLight();
+    </script>
+  </body>
+</html>
