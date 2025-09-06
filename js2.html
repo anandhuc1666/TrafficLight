@@ -1,0 +1,43 @@
+<html>
+<style>
+    .light {
+        width: 150px;
+        height: 150px;
+        border: 1px solid #000;
+        background-color: gray;
+        border-radius: 50%;
+        margin: 10px;
+    }
+</style>
+
+<body>
+    <div id="g" class="light"></div>
+    <div id="y" class="light"></div>
+    <div id="r" class="light"></div>
+
+<script>
+    let g = document.getElementById("g")
+    let y = document.getElementById("y")
+    let r = document.getElementById("r")
+    function colorMark() {
+    setTimeout(() => {
+            g.style.backgroundColor = "green";
+            y.style.backgroundColor = "gray";
+            r.style.backgroundColor = "gray";
+        });
+     setTimeout(() => {
+            g.style.backgroundColor = "gray";
+            y.style.backgroundColor = "yellow";
+            r.style.backgroundColor = "gray";
+        }, 1000)
+        setTimeout(() => {
+            g.style.backgroundColor = "gray";
+            y.style.backgroundColor = "gray";
+            r.style.backgroundColor = "red";
+        }, 2000)
+    }
+    setInterval(colorMark, 3000)
+    colorMark()
+</script>
+</body>
+</html>
